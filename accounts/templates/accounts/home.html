@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - RevivE{% endblock %}
+{% block content %}
+
+<style>
+    .description-card {
+        background-color: #212529; /* Dark card background to match theme */
+        border: none;
+    }
+
+    .description-card .card-body {
+        color: #fff; /* Light text color for readability */
+    }
+
+    .big-buttons {
+        text-align: center; /* Center-align the buttons */
+        padding-bottom: 2rem; /* Space from the content below */
+    }
+
+    .big-button {
+        font-size: 1rem; /* Adjusted text size for buttons */
+        padding: 0.5rem 1rem; /* Smaller button padding */
+        margin: 0 10px; /* Reduced margin between buttons */
+        border: none; /* Remove border */
+        transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+        border-radius: 50px; /* Rounded corners for a modern look */
+    }
+
+    .btn-login {
+        background: linear-gradient(to right, #4CAF50, #00C853); /* Gradient background for login button */
+    }
+
+    .btn-login:hover {
+        background: linear-gradient(to right, #00C853, #4CAF50); /* Gradient background on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    .btn-signup {
+        background: linear-gradient(to right, #00BCD4, #03A9F4); /* Gradient background for signup button */
+    }
+
+    .btn-signup:hover {
+        background: linear-gradient(to right, #03A9F4, #00BCD4); /* Gradient background on hover */
+        transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    .description-image {
+        height: 420px;
+        width: 420px;
+        object-fit: cover;
+        position: relative;
+        left: 100px;
+        top: -30px;
+    }
+
+    .description-container {
+        margin-top: 6rem; /* Add margin to move the description box further down */
+    }
+    .row.description-container{
+        height: fit-content;
+    }
+
+    .big-buttons {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+</style>
+
+<div class="container mt-5">
+    <div class="container my-5">
+        <div class="row description-container">
+            <div class="col-md-6">
+                <div class="card description-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome to RevivE</h5>
+                        <p class="card-text">A platform dedicated to promoting sustainability in the electronics industry. Our mission is to facilitate a circular economy where electronics are reused, recycled, and enjoyed for as long as possible. Here, you can rent the latest tech gadgets, recycle your old electronics responsibly, or sell them to someone who can give them a second life. Join us in reducing electronic waste and promoting a healthier planet.</p>
+                        <p class="card-text">We aim to provide a seamless experience for our users, allowing them to contribute to a greener environment while enjoying the latest in technology. Whether you're a consumer looking to upgrade your device or a business seeking sustainable solutions, RevivE is here to meet your needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'recycle.png' %}" alt="Description Image" class="description-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="big-buttons">
+        <a href="{% url 'login' %}" class="btn btn-login big-button">LOGIN</a>
+        <a href="{% url 'register' %}" class="btn btn-signup big-button">REGISTER</a>
+    </div>
+
+{% endblock %}

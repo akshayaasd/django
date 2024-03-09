@@ -1,0 +1,21 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %}Dashboard - RevivE{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome to RevivE Dashboard!</h2>
+    <p>Please select one of the options below:</p>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% url "ewaste_collection:index" %}" class="btn btn-primary btn-block">E-Waste Collection</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'product_rental:index' %}" class="btn btn-primary btn-block">Product Rental</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url "product_selling:index" %}" class="btn btn-primary btn-block">Product Selling</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% for ewaste in ewastes %}
+    <div>
+        <p>Waste Type: {{ ewaste.waste_type }}</p>
+        <p>Quantity: {{ ewaste.quantity }}</p>
+        <p>Location: {{ ewaste.location }}</p>
+        <p>Date Submitted: {{ ewaste.date_submitted }}</p> <!-- Display the date and time -->
+        <img src="{{ ewaste.waste_image.url }}" alt="EWaste Image"> <!-- Display the waste image -->
+        <button>Show</button>
+    </div>
+{% endfor %}

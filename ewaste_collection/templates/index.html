@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Submit E-Waste Collection - RevivE{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Submit E-Waste Collection</div>
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+              <!-- Add hidden input fields for date and time -->
+              <input type="hidden" name="date_submitted" id="date_submitted" value="{{ date_submitted }}">
+              <input type="hidden" name="time_submitted" id="time_submitted" value="{{ time_submitted }}">
+            </div>
+            <input type="checkbox" name="visible" id="visible">
+            <label for="visible">Make visible</label>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Get the current date and time
+  var currentDate = new Date();
+  var dateFormatted = currentDate.toISOString().slice(0,10);
+  var timeFormatted = currentDate.toLocaleTimeString();
+
+  // Set the values of the hidden input fields
+  document.getElementById('date_submitted').value = dateFormatted;
+  document.getElementById('time_submitted').value = timeFormatted;
+</script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}E-Waste Collection Submitted - RevivE{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+        E-Waste collection has been submitted successfully!
+    </div>
+    <a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}
